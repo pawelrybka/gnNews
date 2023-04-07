@@ -4,7 +4,6 @@ import styles from './Counter.module.css'
 function Counter() {
 
   const [count, setCount] = useState(0)
-  const [visible, setVisible] = useState(false)
 
   return (
     <div className={styles.counter}>

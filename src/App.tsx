@@ -1,5 +1,6 @@
 import Counter from './Components/Counter/Counter'
 import Second from './Components/Second/Second'
+import Third from './Components/Third/Third'
 import './App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Counter/>
       <Second/>
+      <Third/>
     </>
   )
 }
