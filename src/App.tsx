@@ -1,15 +1,52 @@
-import Counter from './Components/Counter/Counter'
-import Second from './Components/Second/Second'
-import Third from './Components/Third/Third'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
+  
+  const [menuVisible, setMenuVisible] = useState(false)
+
   return (
-    <>
-      <Counter/>
-      <Second/>
-      <Third/>
-    </>
+    <div className="app">
+      <nav>Navbar</nav>
+      <main>Main</main>
+      <div id='sidebar'>
+        <span onClick={() => setMenuVisible(!menuVisible)}>Menu</span>
+        {menuVisible && 
+          <div id='sidebar__content'>
+            <ul>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li> 
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li> 
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li>
+              <li>Tak</li> 
+            </ul>
+          </div>
+        }
+      </div>
+      <footer>Footer</footer>
+    </div>
   )
 }
 
