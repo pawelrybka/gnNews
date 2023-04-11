@@ -1,0 +1,8 @@
+.footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
