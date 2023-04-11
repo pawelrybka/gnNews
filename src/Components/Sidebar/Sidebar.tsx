@@ -5,9 +5,7 @@ import styles from './Sidebar.module.css'
 function Sidebar() {
   
   const [sidebarVisible, setSidebarVisible] = useState(true);
-  
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  
   const [isRotated, setIsRotated] = useState(false);
 
   useEffect(() => {
@@ -36,6 +34,7 @@ function Sidebar() {
     </div>
     {(sidebarVisible || screenWidth >= 800) && 
       <div className={styles.sidebar__content}>
+        <h3>Countries:</h3>
         <span>Poland</span>
         <span>America</span>
         <span>Russia</span>
