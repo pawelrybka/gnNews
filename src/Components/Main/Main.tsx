@@ -1,18 +1,12 @@
-import { useParams } from 'react-router-dom';
 import styles from './Main.module.css'
+import { Outlet } from "react-router-dom";
 
 function Main() {
-  
-  const { countryId } = useParams();
-  
-  if (countryId === '') {
-    return (
-      <div className={styles.main}>
-        <p>Empty</p>
-      </div>
-    );
-  }
-
+  return (
+    <div className={styles.main}>
+      <Outlet/>
+    </div>
+  );
 }
 
 export default Main

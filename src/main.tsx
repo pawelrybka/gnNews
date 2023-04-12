@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import ErrorPage from './Components/Main/ErrorPage/ErrorPage';
-import Main from './Components/Main/Main';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import { createBrowserRouter, RouterProvider } from "react-router-dom"; 
+import EmptyState from './Components/Main/MainContent/EmptyState/EmptyState';
+import DisplayState from './Components/Main/MainContent/DisplayState/DisplayState';
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
-        element: <Main />,
+        path: "/",
+        element: <EmptyState/>,
       },
       {
-        path: 'country/:countryId',
-        element: <Main />,
+        path: "/country/:id",
+        element: <DisplayState />,
       },
     ],
   },

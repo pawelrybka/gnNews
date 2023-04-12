@@ -21,6 +21,11 @@
   align-items: center;
 }
 
+.sidebar__content a{
+  text-decoration: none;
+  color: black;
+}
+
 .menu{
   display: flex;
   gap: .5rem;

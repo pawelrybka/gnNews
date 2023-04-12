@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
+
 
 function Header() {
   return (
     <div className={styles.header}>
-      <h2>gnNews</h2>
+      <Link to="/">
+        <h2>gnNews</h2>
+      </Link>
     </div>
   )
 }

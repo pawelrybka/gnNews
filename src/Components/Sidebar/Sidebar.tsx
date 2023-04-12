@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 import styles from './Sidebar.module.css'
 
 function Sidebar() {
@@ -35,11 +36,27 @@ function Sidebar() {
     {(sidebarVisible || screenWidth >= 800) && 
       <div className={styles.sidebar__content}>
         <h3>Countries:</h3>
-        <span>Poland</span>
-        <span>America</span>
-        <span>Russia</span>
-        <span>Brazil</span>
-        <span>England</span>
+        <Link to="/country/pl">
+          <span>Poland</span>
+        </Link>
+        <Link to="/country/us">
+          <span>America</span>
+        </Link>
+        <Link to="/country/ru">
+          <span>Russia</span>
+        </Link>
+        <Link to="/country/br">
+          <span>Brazil</span>
+        </Link>
+        <Link to="/country/de">
+          <span>Germany</span>
+        </Link>
+        <Link to="/country/sk">
+          <span>Slovakia</span>
+        </Link>
+        <Link to="/country/ch">
+          <span>Switzerland</span>
+        </Link>
       </div>
     }
   </div>
