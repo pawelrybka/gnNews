@@ -12,8 +12,8 @@ body{
 
 .root{
   display: grid;
-  min-height: 100vh;
   height: -webkit-fill-available;
+  height: 100vh;
   max-width: 1200px;
   margin: auto;
   grid-template-columns: 15rem 1fr;
