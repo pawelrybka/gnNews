@@ -18,7 +18,7 @@ function DisplayContent() {
 
   async function fetchData() {
     setIsLoading(true);
-    const response = await fetch(`https://newsdata.io/api/1/news?apikey=pub_196670b3eaae32d06d5023fcbe176dc47862e&country=${country.id}`);
+    const response = await fetch(`https://newsdata.io/api/1/news?apikey=pub_2041667435147198834bd8ace4892392a4705&country=${country.id}`);
     const data = await response.json();
     setNewsData(data.results);
     setIsLoading(false);
