@@ -5,8 +5,10 @@ import styles from './Sidebar.module.css'
 
 function Sidebar() {
   
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+  
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  
   const [isRotated, setIsRotated] = useState(false);
 
   useEffect(() => {
@@ -36,25 +38,25 @@ function Sidebar() {
     {(sidebarVisible || screenWidth >= 800) && 
       <div className={styles.sidebar__content}>
         <h3>Countries:</h3>
-        <Link to="/country/pl">
+        <Link to="/country/pl" onClick={toggleSidebar}>
           <span>Poland</span>
         </Link>
-        <Link to="/country/us">
+        <Link to="/country/us" onClick={toggleSidebar}>
           <span>America</span>
         </Link>
-        <Link to="/country/ru">
+        <Link to="/country/ru" onClick={toggleSidebar}> 
           <span>Russia</span>
         </Link>
-        <Link to="/country/br">
+        <Link to="/country/br" onClick={toggleSidebar}>
           <span>Brazil</span>
         </Link>
-        <Link to="/country/de">
+        <Link to="/country/de" onClick={toggleSidebar}>
           <span>Germany</span>
         </Link>
-        <Link to="/country/sk">
+        <Link to="/country/sk" onClick={toggleSidebar}>
           <span>Slovakia</span>
         </Link>
-        <Link to="/country/ch">
+        <Link to="/country/ch" onClick={toggleSidebar}>
           <span>Switzerland</span>
         </Link>
       </div>
