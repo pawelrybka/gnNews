@@ -24,9 +24,11 @@ function Sidebar() {
   }, []);
   
   const toggleSidebar = () => {
-    setSidebarVisible(!sidebarVisible);
-    setIsRotated(!isRotated)
-    document.body.style.overflow = sidebarVisible ? 'auto' : 'hidden';
+    if (screenWidth < 800) {
+      setSidebarVisible(!sidebarVisible);
+      setIsRotated(!isRotated)
+      document.body.style.overflow = sidebarVisible ? 'auto' : 'hidden';
+    }
   };
   
   return (
