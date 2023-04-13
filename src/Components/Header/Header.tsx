@@ -6,18 +6,27 @@ function Header() {
   
   const[menuOpen, setMenuOpen] = useState(false)
   
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth <= 800) {
-        setMenuOpen(false)
-      } else {
-        setMenuOpen(true)
-      }
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (menuOpen && screenWidth < 800) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
-    window.addEventListener('resize', handleResize)
-    handleResize()
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [menuOpen, screenWidth]);
 
   return (
     <div className={styles.header}>
@@ -25,7 +34,7 @@ function Header() {
         <Link to="/">
           <h2>gnNews</h2>
         </Link>
-        {menuOpen || window.innerWidth > 800 ?
+        {menuOpen || screenWidth > 800 ?
           <ul className={styles.menu}>
             <li>Display</li>
             <li>Repository</li>
