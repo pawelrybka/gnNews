@@ -37,7 +37,9 @@ function Header() {
         {menuOpen || screenWidth > 800 ?
           <ul className={styles.menu}>
             <li>Display</li>
-            <li>Repository</li>
+            <Link to="https://github.com/pawelrybka/gnNews">
+              <li>Repository</li>
+            </Link>
           </ul>
           : null
         }
