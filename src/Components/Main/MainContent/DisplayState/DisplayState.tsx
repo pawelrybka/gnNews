@@ -13,7 +13,6 @@ interface NewsArticle {
   link: string
 }
 
-
 function DisplayContent() {
 
   const country = useParams();
@@ -40,16 +39,16 @@ function DisplayContent() {
     fetchData();
   }, [country]);
 
+  useEffect(() => {
+    if (informationModalVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [informationModalVisible]);
+
   return (
     <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
-      {informationModalVisible && 
-        <InformationModal
-          informationModalVisible={informationModalVisible} 
-          setInformationModalVisible={setInformationModalVisible}
-          selectedArticle={selectedArticle}
-        />
-      }
-      
       {isLoading ? 
         <LoadingState />
        : 
@@ -62,6 +61,13 @@ function DisplayContent() {
             <p>{article.country}</p>
           </div>
         ))
+      }
+      {informationModalVisible && 
+        <InformationModal
+          informationModalVisible={informationModalVisible} 
+          setInformationModalVisible={setInformationModalVisible}
+          selectedArticle={selectedArticle}
+        />
       }
     </div>
   );

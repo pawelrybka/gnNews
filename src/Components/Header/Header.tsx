@@ -53,7 +53,7 @@ function Header() {
                 <BsGrid size={20}/> 
               }
             </li>
-            <Link to="https://github.com/pawelrybka/gnNews">
+            <Link to="https://github.com/pawelrybka/gnNews" target="_blank">
               <li>Repository</li>
             </Link>
           </ul>
