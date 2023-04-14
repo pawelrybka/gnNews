@@ -39,12 +39,6 @@ function DisplayContent() {
     fetchData();
   }, [country]);
 
-  useEffect(() => {
-    if (informationModalVisible) {
-      document.body.style.overflow = 'hidden';
-    }
-  }, [informationModalVisible]);
-
   return (
     <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
       {isLoading ? 
