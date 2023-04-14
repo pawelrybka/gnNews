@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../../Redux/displaySlice';
 import LoadingState from '../LoadingState/LoadingState';
 import styles from './DisplayState.module.css';
 
@@ -9,7 +11,9 @@ interface NewsArticle {
 }
 
 function DisplayContent() {
-  
+
+  const displayColumn = useSelector((state: RootState) => state.display.displayColumn);
+
   const [newsData, setNewsData] = useState<NewsArticle[]>([]);
   
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +33,7 @@ function DisplayContent() {
   }, [country]);
 
   return (
-    <div className={styles.displaycontent}>
+    <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
       {isLoading ? (
         <LoadingState />
       ) : (

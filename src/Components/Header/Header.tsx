@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { BsGrid } from 'react-icons/bs';
+import { BsViewStacked } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { toggleColumn } from '../../Redux/displaySlice';
 import styles from './Header.module.css'
 
 function Header() {
   
+  const dispatch = useDispatch();
+
   const[menuOpen, setMenuOpen] = useState(false)
   
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -36,7 +42,9 @@ function Header() {
         </Link>
         {menuOpen || screenWidth > 800 ?
           <ul className={styles.menu}>
-            <li>Display</li>
+            <li onClick={() => dispatch(toggleColumn())}>
+              <BsViewStacked size={20}/>
+            </li>
             <Link to="https://github.com/pawelrybka/gnNews">
               <li>Repository</li>
             </Link>

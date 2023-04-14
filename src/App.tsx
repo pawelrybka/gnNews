@@ -1,3 +1,5 @@
+import { Provider } from 'react-redux';
+import Store from './Redux/Store';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
 import Sidebar from './Components/Sidebar/Sidebar';
@@ -8,10 +10,12 @@ function App() {
 
   return (
     <div className="root">
-      <Header/>
-      <Main/>
-      <Sidebar/>
-      <Footer/>
+      <Provider store={Store}>
+        <Header/>
+        <Main/>
+        <Sidebar/>
+        <Footer/>
+      </Provider>
     </div>
   )
 }
