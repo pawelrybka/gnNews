@@ -1,0 +1,65 @@
+.informationmodal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 600px, 90vw);
+    max-height: 80vh;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.informationmodal__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+}
+
+.informationmodal__header button {
+    padding: .5rem;
+    background-color: white;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.informationmodal__content{
+    flex: 1;
+    border-radius: 0 0 20px 20px;
+    padding: 1rem;
+}
+
+.informationmodal__footer{
+    padding: 1rem;
+    border-radius: 0 0 20px 20px;
+    border-top: 1px solid rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: space-between;
+}
+
+.informationmodal__footer a{
+    text-decoration: none;
+}
+
+.informationmodal__footer button{
+    padding: .5rem;
+    background-color: white;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
