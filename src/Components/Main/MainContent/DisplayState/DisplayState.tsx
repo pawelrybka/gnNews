@@ -39,6 +39,8 @@ function DisplayContent() {
     fetchData();
   }, [country]);
 
+  document.body.style.overflow = informationModalVisible ? 'hidden' : 'auto';
+
   return (
     <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
       {isLoading ? 
