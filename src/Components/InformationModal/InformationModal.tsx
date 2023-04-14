@@ -37,7 +37,7 @@ function InformationModal({ informationModalVisible, setInformationModalVisible,
           </Link>
         </div>
       </div>
-      {/* <Backdrop/> */}
+      <Backdrop/>
     </>
   )
 }
