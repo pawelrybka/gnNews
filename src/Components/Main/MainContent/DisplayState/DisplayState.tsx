@@ -45,7 +45,7 @@ function DisplayContent() {
     } else {
       document.body.style.overflow = 'auto';
     }
-  }, [informationModalVisible]);
+  }, []);
 
   return (
     <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
