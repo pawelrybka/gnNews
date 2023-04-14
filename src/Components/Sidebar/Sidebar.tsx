@@ -41,25 +41,46 @@ function Sidebar() {
       <div className={styles.sidebar__content}>
         <h3>Countries:</h3>
         <Link to="/country/pl" onClick={toggleSidebar}>
-          <span>Poland</span>
+          <div className={styles.country}>
+            <img src="/flags/pl.png" alt="" />
+            <span>Poland</span>
+          </div>
         </Link>
         <Link to="/country/us" onClick={toggleSidebar}>
-          <span>America</span>
+          <div className={styles.country}>
+            <img src="/flags/us.png" alt="" />
+            <span>America</span>
+          </div>
         </Link>
         <Link to="/country/ru" onClick={toggleSidebar}> 
-          <span>Russia</span>
+          <div className={styles.country}>
+            <img src="/flags/ru.png" alt="" />
+            <span>Russia</span>
+          </div>
         </Link>
         <Link to="/country/br" onClick={toggleSidebar}>
-          <span>Brazil</span>
+          <div className={styles.country}>
+            <img src="/flags/br.png" alt="" />
+            <span>Brazil</span>
+          </div>
         </Link>
         <Link to="/country/de" onClick={toggleSidebar}>
-          <span>Germany</span>
+          <div className={styles.country}>
+            <img src="/flags/de.png" alt="" />
+            <span>Germany</span>
+          </div>
         </Link>
         <Link to="/country/sk" onClick={toggleSidebar}>
-          <span>Slovakia</span>
+          <div className={styles.country}>
+            <img src="/flags/sk.png" alt="" />
+            <span>Slovakia</span>
+          </div>
         </Link>
         <Link to="/country/ch" onClick={toggleSidebar}>
-          <span>Switzerland</span>
+          <div className={styles.country}>
+            <img src="/flags/ch.png" alt="" />
+            <span>Switzerland</span>
+          </div>
         </Link>
       </div>
     }
