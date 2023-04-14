@@ -4,11 +4,15 @@ import { BsGrid } from 'react-icons/bs';
 import { BsViewStacked } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { toggleColumn } from '../../Redux/displaySlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Redux/displaySlice';
 import styles from './Header.module.css'
 
 function Header() {
   
   const dispatch = useDispatch();
+
+  const displayColumn = useSelector((state: RootState) => state.display.displayColumn);
 
   const[menuOpen, setMenuOpen] = useState(false)
   
@@ -43,13 +47,18 @@ function Header() {
         {menuOpen || screenWidth > 800 ?
           <ul className={styles.menu}>
             <li onClick={() => dispatch(toggleColumn())}>
-              <BsViewStacked size={20}/>
+              {displayColumn ? 
+                <BsViewStacked size={20}/> 
+                  : 
+                <BsGrid size={20}/> 
+              }
             </li>
             <Link to="https://github.com/pawelrybka/gnNews">
               <li>Repository</li>
             </Link>
           </ul>
-          : null
+          : 
+          null
         }
         <div className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
           <div className={`${styles.hamburger__line} ${menuOpen ? styles.active : ''}`}></div>
