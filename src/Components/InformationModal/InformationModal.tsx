@@ -22,7 +22,7 @@ function InformationModal({ informationModalVisible, setInformationModalVisible,
     <>
       <div className={styles.informationmodal}>
         <div className={styles.informationmodal__header}>
-          <h3>{selectedArticle?.title}</h3>
+          <h3>Information</h3>
           <button onClick={() => setInformationModalVisible(!informationModalVisible)}>
             <AiOutlineClose size={20}/>
           </button>
