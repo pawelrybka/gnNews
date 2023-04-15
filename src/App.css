@@ -12,8 +12,7 @@ body{
 
 .root{
   display: grid;
-  height: -webkit-fill-available;
-  height: 100vh;
+  height: 100svh;
   max-width: 1200px;
   margin: auto;
   grid-template-columns: 15rem 1fr;
@@ -22,7 +21,6 @@ body{
   "header header"
   "sidebar main"
   "sidebar footer" 
-  
 }
 
 @media only screen and (max-width: 800px){
