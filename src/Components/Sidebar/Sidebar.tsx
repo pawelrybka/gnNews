@@ -12,6 +12,16 @@ function Sidebar() {
   const [isRotated, setIsRotated] = useState(false);
 
   useEffect(() => {
+    if (screenWidth < 800 && sidebarVisible) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+  }, [sidebarVisible]);
+  
+  useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -27,8 +37,8 @@ function Sidebar() {
     if (screenWidth < 800) {
       setSidebarVisible(!sidebarVisible)
       setIsRotated(!isRotated)
-      document.body.style.overflow = sidebarVisible ? '' : 'auto'
-      document.body.style.touchAction = sidebarVisible ? '' : 'none'
+      // document.body.style.overflow = sidebarVisible ? '' : 'auto'
+      // document.body.style.touchAction = sidebarVisible ? '' : 'none'
     }
   };
   
