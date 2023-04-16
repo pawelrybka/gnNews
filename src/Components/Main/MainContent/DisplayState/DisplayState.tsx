@@ -39,13 +39,21 @@ function DisplayContent() {
     fetchData();
   }, [country]);
 
-  document.body.style.overflow = informationModalVisible ? 'hidden' : 'auto';
-
+  useEffect(() => {
+    if (informationModalVisible) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+  }, [informationModalVisible]);
+  
   return (
     <div className={`${styles.displaycontent} ${displayColumn ? styles.rows : ''}`}>
       {isLoading ? 
         <LoadingState />
-       : 
+        : 
         newsData.map((article, index) => (
           <div key={index} className={styles.article} onClick={() => {
             setSelectedArticle(article)

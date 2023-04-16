@@ -37,8 +37,6 @@ function Sidebar() {
     if (screenWidth < 800) {
       setSidebarVisible(!sidebarVisible)
       setIsRotated(!isRotated)
-      // document.body.style.overflow = sidebarVisible ? '' : 'auto'
-      // document.body.style.touchAction = sidebarVisible ? '' : 'none'
     }
   };
   
