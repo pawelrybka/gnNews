@@ -25,10 +25,11 @@
 
 .hamburger{
     width: 2rem;
-    height: .5rem;
+    height: 2rem;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: .5rem;
     cursor: pointer;
 }
 
@@ -53,11 +54,11 @@
 }
 
 .active:nth-child(1){
-    transform: translateY(3px) rotate(45deg)
+    transform: translateY(4px) rotate(45deg)
 }
     
 .active:nth-child(2){
-    transform:  translateY(-3px) rotate(-45deg);   
+    transform:  translateY(-4px) rotate(-45deg);   
 }
 
 

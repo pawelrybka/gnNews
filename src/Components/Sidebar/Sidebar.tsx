@@ -6,13 +6,11 @@ import styles from './Sidebar.module.css'
 function Sidebar() {
   
   const [sidebarVisible, setSidebarVisible] = useState(false);
-  
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  
   const [isRotated, setIsRotated] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth < 800 && sidebarVisible) {
+    if (screenWidth < 800 && sidebarVisible) {
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
     } else {
@@ -34,7 +32,7 @@ function Sidebar() {
   }, []);
   
   const toggleSidebar = () => {
-    if (window.innerWidth < 800) {
+    if (screenWidth < 800) {
       setSidebarVisible(!sidebarVisible)
       setIsRotated(!isRotated)
     }
@@ -46,7 +44,7 @@ function Sidebar() {
       <IoIosArrowForward size={20} className={`${styles.icon} ${isRotated ? styles.rotated : ''}`}/>
       <p>Menu</p>
     </div>
-    {(sidebarVisible || window.innerWidth >= 800) && 
+    {(sidebarVisible || screenWidth >= 800) && 
       <div className={styles.sidebar__content}>
         <h3>Countries:</h3>
         <Link to="/country/pl" onClick={toggleSidebar}>
