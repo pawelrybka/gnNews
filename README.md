@@ -7,6 +7,5 @@
   <li>Redux Toolkit</li>
   <li>React Router</li>
   <li>React Testing Library</li>
-  <li>Framer Motion</li>
   <li>React Icons</li>
 </ul>
